@@ -43,6 +43,8 @@ for table in soup.find_all('table', attrs={'class':'numeric full-width'}):
     all_data.append(data)
     data = []
 
+# close driver
+driver.quit()
 
 # get yesterday's date (data is from previous day)
 date = datetime.strftime(datetime.now() - timedelta(1), "%m/%d/%Y")

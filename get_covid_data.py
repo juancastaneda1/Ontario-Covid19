@@ -6,8 +6,10 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 from datetime import timedelta
+import schedule  # pip install schedule
 
-
+#def getCovidData():
+    
 url = 'https://www.ontario.ca/page/how-ontario-is-responding-covid-19'
 
 #stop firefox from actually opening 
@@ -71,4 +73,7 @@ data = pd.DataFrame(data[1:, :], columns=data[0])
 #add new data and save to csv
 data.insert(1,date, df.to_numpy().astype(int), allow_duplicates=True)
 data.to_csv(r'Ontario Covid19 data.csv', index=False)
+
+
+
 
